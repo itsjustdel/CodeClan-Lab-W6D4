@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 const handleDeleteAll = function(event){
-  const allListItems = document.querySelectorAll('li');
+  const allListItems = document.querySelectorAll('ul ul');
   
   allListItems.forEach((listItem) => {
     listItem.remove();
@@ -32,8 +32,20 @@ const handleFormSubmit = function(event){
   console.log(category);
 
   
-  const listItem = document.createElement('li');
-  listItem.textContent = `${title} ${author} ${category}`;
+  const listItem = document.createElement('ul');
+
+  const titleParagraph = document.createElement('li')
+  titleParagraph.textContent = title;
+  listItem.appendChild(titleParagraph);
+
+  const authorParagraph = document.createElement('li');
+  authorParagraph.textContent = author;
+  listItem.appendChild(authorParagraph);
+
+  const categoryParagraph = document.createElement('li');
+  categoryParagraph.textContent = category;
+  listItem.appendChild(categoryParagraph)
+
 
   const list = document.querySelector('#reading-list');
   list.appendChild(listItem);

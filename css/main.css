@@ -2,9 +2,23 @@ body {
   font-family: Palatino;  
 }
 
-ul{
+body > ul{
   display: flex;
   gap: 20px;
   flex-direction: row;
   flex-wrap: wrap;
+  
+}
+
+body > ul > ul {
+  list-style-type: none;
+  background-color: aquamarine;
+  text-align: left;
+  padding-inline-start: 0px;
+  padding: 10px;
+}
+
+body> ul > li{
+  display: flex;
+  flex-direction: column;
 }
